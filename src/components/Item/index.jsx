@@ -1,0 +1,1 @@
+// Thong tin co ban cua 1 san pham
