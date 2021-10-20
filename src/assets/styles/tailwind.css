@@ -8,7 +8,7 @@
     @apply bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 rounded;
 }
 .btn-yellow{
-  @apply bg-yellow-400 hover:bg-gray-700 text-white px-4 py-2 rounded;
+  @apply bg-yellow-400 hover:bg-gray-700 text-white px-4 py-2 rounded-full uppercase;
 }
 * {
     font-family: 'Varela Round', sans-serif;
@@ -17,7 +17,13 @@ html,
 body,
 #root {
   height: 100%;
+}
+.iJAOXZ{
+  overflow: visible !important;
 } 
+.iNinUC{
+  overflow: visible !important;
+}
 @responsive{
   /* class for slide plugin */
   .each-slide > div {

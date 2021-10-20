@@ -1,3 +1,4 @@
+import ImageSelectField from 'components/ImageSelectField';
 import InputField from 'components/InputField';
 import SelectField from 'components/SelectField';
 import { FastField, Form, Formik } from 'formik';
@@ -43,22 +44,7 @@ function PhotoForm(props) {
               breakDown={true}
             />
             <FastField name="category" component={SelectField} label="Category" placeholder="Select category" options={PHOTO_CATEGORY_OPTIONS}/>
-            <FormGroup>
-              <Label for="titleId">Photo</Label>
-              <div className="mt-3">
-                <Button
-                  type="button"
-                  outline
-                  color="primary"
-                  className="btn-blue"
-                >
-                  Random photo
-                </Button>
-              </div>
-              <div>
-                <img src="" alt="" />
-              </div>
-            </FormGroup>
+            <FastField name="image" component={ImageSelectField} label="Image"/>
           </Form>
         );
       }}
