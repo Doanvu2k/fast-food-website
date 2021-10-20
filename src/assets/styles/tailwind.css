@@ -13,8 +13,13 @@
 * {
     font-family: 'Varela Round', sans-serif;
 }
-
+html,
+body,
+#root {
+  height: 100%;
+} 
 @responsive{
+  /* class for slide plugin */
   .each-slide > div {
     display: flex;
     align-items: center;
@@ -22,7 +27,17 @@
     background-size: cover;
     height: 350px;
   }
+  /* yellow color of website  */
   .color-yellow-website{
     background:#F5AB25;
   }
+  /* class remove drag at image */
+  .selector {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
 }

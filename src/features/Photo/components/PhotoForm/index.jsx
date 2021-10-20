@@ -20,7 +20,8 @@ function PhotoForm(props) {
   const initialValues = {
       // khoi tao gia tri cho field co name la title
       title: '',
-      category: null
+      category: null,
+      image: ''
   }
   
   return (
@@ -57,11 +58,6 @@ function PhotoForm(props) {
               <div>
                 <img src="" alt="" />
               </div>
-            </FormGroup>
-            <FormGroup>
-              <Button className="btn-blue my-3" color="primary">
-                Add to album
-              </Button>
             </FormGroup>
           </Form>
         );

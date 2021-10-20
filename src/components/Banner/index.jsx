@@ -30,7 +30,7 @@ function Banner(props) {
             <Slide ref={slideRef} {...properties}>
                 {Images.map((img,index) => (
                     <div className="each-slide" key={index}>
-                        <img src={img} alt="" />
+                        <img src={img} alt="" className="selector"/>
                     </div>
                 ))}
             </Slide>

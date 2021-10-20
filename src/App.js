@@ -1,19 +1,31 @@
 import { Suspense } from "react";
-import { BrowserRouter,Redirect,Switch,Route} from "react-router-dom";
+import { BrowserRouter, Redirect, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Loading from "./components/Loading";
 import React from "react";
-const Photo = React.lazy(() => import('./features/Photo'));
+import { PageTransition } from "@steveeeie/react-page-transition";
+import Home from "features/Home";
+const Photo = React.lazy(() => import("./features/Photo"));
 function App() {
   return (
-    <div className="App">
+    <div className="h-full">
       <Suspense fallback={<div>Loading...</div>}>
         <BrowserRouter>
           <Header />
-          <Switch>
-            <Redirect exact from="/" to="/photos" />
-            <Route path="/photos" component={Photo} />
-          </Switch>
+          <Route
+            render={({ location }) => {
+              return (
+                <PageTransition
+                  preset="moveToLeftFromRight"
+                  transitionKey={location.pathname}
+                >
+                  <Switch location={location}>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/photos" component={Photo} />
+                  </Switch>
+                </PageTransition>
+              );
+            }}
+          />
         </BrowserRouter>
       </Suspense>
     </div>
