@@ -19,7 +19,7 @@ function SlideBanner(props) {
   return (
     <div
 
-      className={`absolute z-50 p-3 rounded-full color-yellow-website hover:bg-red-700 ${
+      className={`absolute z-50 p-3 rounded-full color-yellow-website hover:bg-red-700 cursor-pointer transition-all duration-300 ${
         right
           ? "top-1/2 -translate-y-1/2 left-10"
           : "top-1/2 -translate-y-1/2 right-10"

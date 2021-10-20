@@ -24,6 +24,7 @@ function Banner(props) {
     }
     return (
         <div className="relative">
+            
             <SlideBanner right={true} onClickArrow={pre}/>
             <SlideBanner right={false} onClickArrow={next}/>
             <Slide ref={slideRef} {...properties}>

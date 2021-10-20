@@ -1,50 +1,73 @@
+import InputField from 'components/InputField';
+import SelectField from 'components/SelectField';
+import { FastField, Form, Formik } from 'formik';
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Form, FormGroup, Label,Input,Button } from 'reactstrap';
-import Select from 'react-select';
+import { Button, FormGroup, Label } from 'reactstrap';
 
-PhotoForm.propTypes = {
-    
-};
+PhotoForm.propTypes = {};
 
 function PhotoForm(props) {
-    const PHOTO_CATEGORY_OPTIONS = [{
-        value:1,
-        label: 'Category 1'
+  const PHOTO_CATEGORY_OPTIONS = [
+    {
+      value: 1,
+      label: "Category 1",
     },
     {
-        value:2,
-        label: 'Category 2'
-    }
-]
-    return (
-        <Form className="block w-96 mx-auto">
+      value: 2,
+      label: "Category 2",
+    },
+  ];
+  const initialValues = {
+      // khoi tao gia tri cho field co name la title
+      title: '',
+      category: null
+  }
+  
+  return (
+    <Formik
+        initialValues={initialValues}
+    >
+      {(formikProps) => {
+        // do something here
+        const { values, errors, touched } = formikProps;
+        console.log({ values, errors, touched });
+        return (
+          <Form className="block w-96 mx-auto">
+            <FastField
+              name="title"
+              component={InputField}
+
+              label="Title"
+              placeholder="Eg: Wow nature"
+              breakDown={true}
+            />
+            <FastField name="category" component={SelectField} label="Category" placeholder="Select category" options={PHOTO_CATEGORY_OPTIONS}/>
             <FormGroup>
-                <Label for="titleId">Title</Label>
-                <Input name="titleId" id="titleId" placeholder="Name title ..."/>
+              <Label for="titleId">Photo</Label>
+              <div className="mt-3">
+                <Button
+                  type="button"
+                  outline
+                  color="primary"
+                  className="btn-blue"
+                >
+                  Random photo
+                </Button>
+              </div>
+              <div>
+                <img src="" alt="" />
+              </div>
             </FormGroup>
             <FormGroup>
-                <Label for="categoryId">Category</Label>
-                <Select 
-                    id="categoryId"
-                    name="categoryId"
-                    placeholder="Category Photo"
-                    options={PHOTO_CATEGORY_OPTIONS}
-                />
+              <Button className="btn-blue my-3" color="primary">
+                Add to album
+              </Button>
             </FormGroup>
-            <FormGroup>
-                <Label for="titleId">Photo</Label>
-                <div className="mt-3"><Button type="button" outline color="primary" className="btn-blue">Random photo</Button></div>
-                <div>
-                    <img src="" alt="" />
-                </div>
-                
-            </FormGroup>
-            <FormGroup>
-                <Button className="btn-blue my-3" color="primary">Add to album</Button>
-            </FormGroup>
-        </Form>
-    );
+          </Form>
+        );
+      }}
+    </Formik>
+  );
 }
 
 export default PhotoForm;
