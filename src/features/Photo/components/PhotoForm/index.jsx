@@ -18,7 +18,7 @@ function PhotoForm(props) {
     }
 ]
     return (
-        <Form>
+        <Form className="block w-96 mx-auto">
             <FormGroup>
                 <Label for="titleId">Title</Label>
                 <Input name="titleId" id="titleId" placeholder="Name title ..."/>
@@ -41,7 +41,7 @@ function PhotoForm(props) {
                 
             </FormGroup>
             <FormGroup>
-                <Button className="btn-blue" color="primary">Add to album</Button>
+                <Button className="btn-blue my-3" color="primary">Add to album</Button>
             </FormGroup>
         </Form>
     );

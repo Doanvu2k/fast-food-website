@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Slide } from 'react-slideshow-image'
-import Images from '../../constants/images.js'
+// import Images from '../../constants/images.js'
 import SlideBanner from '../Button/SliceBanner.jsx';
+import Images from 'constants/images.js';
 Banner.propTypes = {
     listBanner: PropTypes.func,
 };
