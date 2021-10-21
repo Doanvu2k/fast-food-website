@@ -17,13 +17,14 @@ body,
 #root {
   height: 100%;
 }
-.iJAOXZ{
-  overflow: visible !important;
-}
-.iNinUC{
-  overflow: visible !important;
-}
+
 @responsive{
+  .iJAOXZ{
+    overflow: visible !important;
+  }
+  .iNinUC{
+    overflow: visible !important;
+  }
   /* class for slide plugin */
   .each-slide > div {
     display: flex;
