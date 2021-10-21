@@ -29,7 +29,7 @@ function ImageSelector(props) {
     return (
         <div>
             <button className="btn-yellow" name={name} onBlur={onRandomButtonBlur} onClick={handleRandomImageClick} type="button">Random image</button>
-            {imageUrl && <img src={imageUrl} alt="Oops not found..." className="my-2 rounded"/>}
+            {imageUrl && <img src={imageUrl} alt="Oops not found..." className="my-2 rounded" onError={handleRandomImageClick}/>}
         </div>
     );
 }

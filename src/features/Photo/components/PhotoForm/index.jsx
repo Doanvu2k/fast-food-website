@@ -5,14 +5,23 @@ import { FastField, Form, Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
 import PropTypes from "prop-types";
+import { useParams } from "react-router";
+import { useSelector } from "react-redux";
 PhotoForm.propTypes = {
   onSubmit: PropTypes.func,
+  initialValues: PropTypes.object,
 };
 PhotoForm.defaultPropTypes = {
   onSubmit: null,
+  initialValues: {
+    title: "",
+    category: null,
+    image: "",
+  }
 };
 function PhotoForm(props) {
-  const { onSubmit } = props;
+  const { onSubmit, initialValues } = props;
+
   const PHOTO_CATEGORY_OPTIONS = [
     {
       value: 1,
@@ -22,13 +31,20 @@ function PhotoForm(props) {
       value: 2,
       label: "Category 2",
     },
+    {
+      value: 3,
+      label: "Category 3",
+    },
+    {
+      value: 4,
+      label: "Category 4",
+    },
+    {
+      value: 5,
+      label: "Category 5",
+    },
   ];
-  const initialValues = {
-    // khoi tao gia tri cho field co name la title
-    title: "",
-    category: null,
-    image: "",
-  };
+
   const validateSchema = Yup.object().shape({
     title: Yup.string().required(),
 
@@ -45,7 +61,6 @@ function PhotoForm(props) {
       {(formikProps) => {
         // do something here
         const { values, errors, touched, isSubmitting } = formikProps;
-        console.log({ values, errors, touched });
         return (
           <Form className="block w-96 mx-auto">
             <FastField
