@@ -4,13 +4,13 @@
 @import "react-slideshow-image/dist/styles.css";
 
 .btn-blue {
-    @apply bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 rounded;
+  @apply bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 rounded;
 }
-.btn-yellow{
+.btn-yellow {
   @apply bg-yellow-400 hover:bg-gray-700 text-white px-4 py-2 rounded-full uppercase transition-all duration-200;
 }
 * {
-    font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 html,
 body,
@@ -18,11 +18,13 @@ body,
   height: 100%;
 }
 
-@responsive{
-  .iJAOXZ{
+@responsive {
+  .iJAOXZ,
+  .erBbkF,
+  .gIJhtR {
     overflow: visible !important;
   }
-  .iNinUC{
+  .iNinUC {
     overflow: visible !important;
   }
   /* class for slide plugin */
@@ -34,8 +36,8 @@ body,
     height: 350px;
   }
   /* yellow color of website  */
-  .color-yellow-website{
-    background:#F5AB25;
+  .color-yellow-website {
+    background: #f5ab25;
   }
   /* class remove drag at image */
   .selector {
@@ -45,11 +47,11 @@ body,
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-}
-.transform-50y{
-  transform: translateY(-50%);
-}
-.transform-50x{
-  transform: translateX(-50%);
-}
+  }
+  .transform-50y {
+    transform: translateY(-50%);
+  }
+  .transform-50x {
+    transform: translateX(-50%);
+  }
 }
