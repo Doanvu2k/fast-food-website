@@ -25,6 +25,7 @@ function AddEdit(props) {
   const handleSubmit = (values) => {
     if (isAddMode) {
       const action = addPhoto(values);
+      history.push("/photos");
       dispatch(action);
       return;
     }
