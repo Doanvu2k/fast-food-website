@@ -16,7 +16,12 @@ function AddEdit(props) {
   const editPhoto = useSelector((state) =>
     state.photos.find((p) => p.id === +photoId)
   );
-  console.log(editPhoto);
+  const initialValues = isAddMode ? {
+    title: "",
+    category: null,
+    image: "",
+  }
+  : editPhoto
   const handleSubmit = (values) => {
     if (isAddMode) {
       const action = addPhoto(values);
@@ -31,7 +36,7 @@ function AddEdit(props) {
     <div>
       <Banner />
       <Link to="/photos">Back to home photos</Link>
-      <PhotoForm onSubmit={handleSubmit} initialValues={editPhoto} />
+      <PhotoForm onSubmit={handleSubmit} initialValues={initialValues} />
     </div>
   );
 }
