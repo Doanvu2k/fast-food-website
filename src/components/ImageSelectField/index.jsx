@@ -16,6 +16,8 @@ ImageSelectField.defaultPropTypes = {
 function ImageSelectField(props) {
   const { field, form, label } = props;
   const { name, value, onBlur } = field;
+  const { touched,errors } = form
+  const showError = touched[name] && errors[name]
   const handleImageUrlChange = (newImg) => {
     console.log(newImg)
     form.setFieldValue(name, newImg);
@@ -29,6 +31,7 @@ function ImageSelectField(props) {
         onImageChange={handleImageUrlChange}
         onRandomButtonBlur={onBlur}
       />
+      {showError && <p className="text-sm text-red-600 ml-2 mt-1">{errors[name]}</p>}
     </div>
   );
 }

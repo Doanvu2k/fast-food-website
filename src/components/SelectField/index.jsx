@@ -20,8 +20,10 @@ SelectField.defaultPropTypes = {
     options: []
 }
 function SelectField(props) {
-    const { field,label,placeholder,disabled,breakDown, options} = props 
+    const { field,label,placeholder,disabled,breakDown, options, form} = props 
     const { name,value } = field
+    const { touched,errors } = form
+    const showError = touched[name] && errors[name]
     const selectedOption = options.find(option => option.value === value)
     const handleSelectOptionChange = (selectedOption) => {
         const selectedValue = selectedOption ? selectedOption.value : selectedOption
@@ -34,7 +36,7 @@ function SelectField(props) {
         field.onChange(changeEvent)
     }
     const customStyles = {
-        control: (styles) => ({...styles, borderRadius: '20px', border: '2px dotted grey', padding: '1px 5px'})
+        control: (styles) => ({...styles, borderRadius: '20px', border: `2px dotted ${showError ? 'rgba(220,38,38,1)' : 'grey'}`, padding: '1px 5px'})
     }
     return (
         <div>
@@ -50,6 +52,7 @@ function SelectField(props) {
                 styles={customStyles}
                 options={options}
             />
+            {showError && <p className="text-sm text-red-600 ml-2 mt-1">{errors[name]}</p>}
         </div>
     );
 }

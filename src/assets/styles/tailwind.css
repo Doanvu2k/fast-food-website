@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 @import "react-slideshow-image/dist/styles.css";
-@import "bootstrap/dist/css/bootstrap.min.css";
 
 .btn-blue {
     @apply bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 rounded;
 }
 .btn-yellow{
-  @apply bg-yellow-400 hover:bg-gray-700 text-white px-4 py-2 rounded-full uppercase;
+  @apply bg-yellow-400 hover:bg-gray-700 text-white px-4 py-2 rounded-full uppercase transition-all duration-200;
 }
 * {
     font-family: 'Varela Round', sans-serif;
@@ -20,7 +19,7 @@ body,
 }
 .iJAOXZ{
   overflow: visible !important;
-} 
+}
 .iNinUC{
   overflow: visible !important;
 }
@@ -45,5 +44,11 @@ body,
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+.transform-50y{
+  transform: translateY(-50%);
+}
+.transform-50x{
+  transform: translateX(-50%);
 }
 }
