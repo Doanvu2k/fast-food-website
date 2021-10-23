@@ -9,7 +9,6 @@ const axiosClinet = axios.create({
     },
     // dung querystring handle params thay vi dung mac dinh cua axios
     paramsSerializer: params => queryString.stringify(params)
-
 })
 
 axiosClinet.interceptors.request.use(async (config)=> {

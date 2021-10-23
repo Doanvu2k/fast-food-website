@@ -73,7 +73,6 @@ const initialPhotos = [
       title: 'Id ex enim non dolore reprehenderit eu ullamco.'
     },
   ];
-  
 const photoSlice = createSlice({
     name: 'photos',
     initialState: initialPhotos,

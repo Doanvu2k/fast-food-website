@@ -7,6 +7,7 @@ import * as Yup from "yup";
 import PropTypes from "prop-types";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
+// component photo form
 PhotoForm.propTypes = {
   onSubmit: PropTypes.func,
   initialValues: PropTypes.object,

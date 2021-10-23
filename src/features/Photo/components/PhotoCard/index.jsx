@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
-
+// component photo card 
 PhotoCard.propTypes = {
     photo: PropTypes.object,
     onRemovePhoto: PropTypes.func,
