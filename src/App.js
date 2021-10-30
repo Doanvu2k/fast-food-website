@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import React from "react";
 import { PageTransition } from "@steveeeie/react-page-transition";
 import Home from "features/Home";
-import Footer from "components/Footer";
+import Footer from "components/Footer/index";
 const Photo = React.lazy(() => import("./features/Photo"));
 function App() {
   return (

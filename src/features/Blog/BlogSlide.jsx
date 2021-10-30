@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { Slide } from 'react-slideshow-image'
 // import Images from '../../constants/images.js'
 import SlideBanner from 'components/Button/SliceBanner';
-import products from '../../features/Product/products'
-import ProductItem from '../../features/Product/ProductItem'
-ProductSlide.propTypes = {
+import BlogItem from './BlogItem'
+import Blogs from './Blogs'
+BlogSlide.propTypes = {
     listBanner: PropTypes.func,
 };
-ProductSlide.defaultPropTypes = {
+BlogSlide.defaultPropTypes = {
     listBanner : []
 }
-function ProductSlide(props) {
+function BlogSlide(props) {
     const slideRef = useRef();
     const properties = {
         arrows: false,
@@ -30,8 +30,8 @@ function ProductSlide(props) {
             <SlideBanner right={false} onClickArrow={next}/>
             <Slide ref={slideRef} {...properties}>
                 <div className="sm:grid grid-cols-1  md:grid grid-cols-2  gap-4 lg:grid-cols-3 w-auto px-5  py-15 ">
-                    {products.map((product)=>(
-                        <ProductItem key={product.id} product={product}/>
+                    {Blogs.map((blog)=>(
+                        <BlogItem key={blog.id} blog={blog}/>
                     ))}
                 </div>
             </Slide>
@@ -39,4 +39,4 @@ function ProductSlide(props) {
     );
 }
 
-export default ProductSlide;
+export default BlogSlide;

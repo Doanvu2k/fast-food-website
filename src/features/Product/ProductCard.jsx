@@ -3,9 +3,9 @@ import products from './products'
 import ProductItem from './ProductItem'
 function ProductCard() {
     return (
-        <div className="flex flex-wrap  py-16 items-center justify-center bg-gray-300 ">
-            {products.map((product)=>(<ProductItem 
-            key={product.id} product={product}/>))}
+        <div className="bg-gray-300 sm:grid grid-cols-1  md:grid grid-cols-2  lg:grid-cols-3 px-20 py-16">
+            {products.map((product)=>(
+            <ProductItem key={product.id} product={product}/>))}
         </div>
     );
 }
